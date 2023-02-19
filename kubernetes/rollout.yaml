@@ -1,0 +1,46 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Rollout
+metadata:
+  name: books-api-rollout
+spec:
+  replicas: 2
+
+  selector:
+    matchLabels:
+      app: books-api
+
+  template:
+    spec:
+      containers:
+      - name: books-api
+        image: juanwigg/go-book-api:v0.0.1
+
+  revisionHistoryLimit: 3
+  rollbackWindow:
+    revisions: 3
+
+  strategy:
+    canary:
+      canaryService: books-api-canary-service
+      stableService: books-api-stable-service
+
+      canaryMetadata:
+        annotations:
+          role: canary
+        labels:
+          role: canary
+
+      stableMetadata:
+        annotations:
+          role: stable
+        labels:
+          role: stable
+
+      scaleDownDelaySeconds: 30
+
+      steps:
+      - setWeight: 20
+      - pause:
+          duration: 5m
+      - setWeight: 80
+      - pause: {}
