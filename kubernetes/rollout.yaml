@@ -47,8 +47,6 @@ spec:
         labels:
           role: stable
 
-      scaleDownDelaySeconds: 30
-
       steps:
       - setWeight: 20
       - pause:
