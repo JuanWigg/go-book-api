@@ -31,7 +31,7 @@ func main() {
 	api.PATCH("/book", updateBook)
 	api.DELETE("/book/:id", deleteBookById)
 
-	router.Run(":8080")
+	router.Run(":80")
 }
 
 func Ping(c *gin.Context) {
