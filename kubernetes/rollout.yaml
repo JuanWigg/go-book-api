@@ -26,10 +26,6 @@ spec:
             memory: 32Mi
             cpu: 5m
 
-  revisionHistoryLimit: 3
-  rollbackWindow:
-    revisions: 3
-
   strategy:
     canary:
       canaryService: books-api-canary-service
