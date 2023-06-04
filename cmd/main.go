@@ -12,6 +12,7 @@ var books = []Book{
 	{ID: "1", Title: "The Subtle Art of Not Giving a F*ck", Author: "Mark Manson", Description: "A book about life"},
 	{ID: "2", Title: "The Holy Bible", Author: "Juan", Description: "Is the bible bro"},
 	{ID: "3", Title: "Sandokan", Author: " Emilio Salgari", Description: "Libro sobre las aventuras del pirata Sandokan"},
+	{ID: "4", Title: "Hola desde la versión 0.0.3", Author: "Juan Wiggenhauser", Description: "Test"},
 }
 
 type Book struct {
