@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: books-api
-        image: juanwigg/go-book-api:v0.0.3
+        image: juanwigg/go-book-api:v0.0.2
         ports:
         - name: http
           containerPort: 80
